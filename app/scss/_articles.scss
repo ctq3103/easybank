@@ -1,0 +1,73 @@
+.article {
+	background-color: $color-very-light-gray;
+
+	&__grid {
+		display: grid;
+		//grid-template-columns: repeat(autofit, minmax(15rem, 1fr));
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+
+		@include breakpoint-up(medium) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include breakpoint-up(large) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	&__item {
+		border-radius: 0.3rem;
+		height: 100%;
+		background-color: $color-white;
+		overflow: hidden;
+		box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.15);
+	}
+
+	&__image {
+		height: 12.5rem;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+
+		&-currency {
+			background-image: url(../../images/image-currency.jpg);
+		}
+		&-restaurant {
+			background-image: url(../../images/image-restaurant.jpg);
+		}
+		&-plane {
+			background-image: url(../../images/image-plane.jpg);
+		}
+		&-confetti {
+			background-image: url(../../images/image-confetti.jpg);
+		}
+	}
+
+	&__text {
+		padding: 1.8rem 1.8rem 2.5rem 1.8rem;
+		color: $color-grayish-blue;
+
+		@include breakpoint-up(medium) {
+			padding: 1.8rem 1.5rem;
+		}
+	}
+
+	&__author {
+		font-size: 0.6rem;
+		margin-bottom: 1rem;
+	}
+	&__title {
+		font-size: 1.1rem;
+		color: $color-dark-blue;
+		margin-bottom: 0.5rem;
+		line-height: 1.2;
+		transition: fill 0.2s ease-in-out;
+		&:hover {
+			color: $color-lime-green;
+		}
+	}
+	&__description {
+		font-size: 0.8rem;
+	}
+}
